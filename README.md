@@ -12,6 +12,6 @@ Colorize game CHECK
 Shrink enemies on hit CHECK
 Create particle on hit CHECK
 Add score CHECK
-Add game over UI
-Add restart button
-Add start game button
+Add game over UI CHECK
+Add restart button CHECK
+Add start game button CHECK

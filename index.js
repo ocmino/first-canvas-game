@@ -10,6 +10,8 @@ const startGameButton = document.querySelector('#startGameButton')
 const modalEl = document.querySelector('#modalEl')
 const bigScoreEl = document.querySelector('#bigScoreEl')
 
+
+
 class Player{
     constructor(x, y, radius, color){
         this.x = x
@@ -23,7 +25,7 @@ class Player{
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.fillStyle = this.color
         c.fill()
-    }
+        }
 }
 
 class Projectile{
@@ -40,6 +42,7 @@ class Projectile{
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.fillStyle = this.color
         c.fill()
+
     }
 
     update(){
@@ -62,6 +65,7 @@ class Enemy{
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.fillStyle = this.color
         c.fill()
+
     }
 
     update(){
@@ -79,7 +83,7 @@ class Particle{
         this.radius = radius
         this.color = color
         this.velocity = velocity
-        this.alpha = 1
+        this.alpha = 1  
     }
     draw(){
         c.save()
@@ -156,8 +160,10 @@ let animationId
 let score = 0
 function animate() {
     animationId = requestAnimationFrame(animate)
-    c.fillStyle = 'rgba(0, 0, 0, 0.2)' 
-    c.fillRect(0, 0, canvas.width, canvas.height)
+  
+    c.clearRect(0, 0, canvas.width, canvas.height)
+  /*   c.fillStyle = 'rgba(0, 0, 0, 0.2)' 
+    c.fillRect(0, 0, canvas.width, canvas.height) */
     player.draw()
     particles.forEach((particle, index) => {
         if (particle.alpha <= 0) {
