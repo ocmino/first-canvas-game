@@ -125,7 +125,7 @@ function init() {
 
 function spawnEnemies() {
     setInterval(() => {
-        const radius =Math.random() * (30 - 4) + 4
+        const radius = Math.random() * (30 - 4) + 4
 
         let x
         let y
@@ -146,8 +146,8 @@ function spawnEnemies() {
             canvas.width / 2 - x)
 
         const velocity = {
-            x: Math.cos(angle),
-            y: Math.sin(angle)
+            x: Math.cos(angle) * 0.5,
+            y: Math.sin(angle) * 0.5
 }
 
         enemies.push(new Enemy(x, y, radius, color, velocity))
